@@ -5,6 +5,10 @@ export type AboutUsDocument = AboutUs & Document;
 
 @Schema({ timestamps: true })
 export class AboutUs {
+
+  @Prop({ required: true })
+  about_us: string;
+
   @Prop({ required: true })
   vision: string;
 

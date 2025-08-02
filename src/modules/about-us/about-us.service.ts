@@ -35,9 +35,15 @@ export class AboutUsService {
     return formatResponse(HttpStatus.OK, Messages.ABOUT_US_RETRIEVED, aboutus);
   }
 
-  findOne(id: string) {
-    return `This action returns a #${id} aboutUs`;
-  }
+  async findOne(
+       id: string,
+     ): Promise<{ statusCode: number; message: string; data: AboutUsDocument }> {
+       const aboutUs = await this.aboutUsModel.findById(id).exec();
+       if (!aboutUs) {
+         throw new NotFoundException(`${Messages.ABOUT_US_NOT_FOUND} id: ${id}`);
+       }
+       return formatResponse(HttpStatus.OK, Messages.ABOUT_US_RETRIEVED, aboutUs);
+     }
 
   async update(
     id: string,
