@@ -14,4 +14,11 @@ export enum Messages {
   CATEGORY_UPDATED = 'Category updated successfully.',
   CATEGORY_DELETED = 'Category deleted successfully.',
   CATEGORY_NOT_FOUND = 'Category not found.',
+
+  // About Us Messages
+  ABOUT_US_CREATED = 'About Us content created successfully.',
+  ABOUT_US_RETRIEVED = 'About Us content retrieved successfully.',
+  ABOUT_US_UPDATED = 'About Us content updated successfully.',
+  ABOUT_US_DELETED = 'About Us content deleted successfully.',
+  ABOUT_US_NOT_FOUND = 'About Us content not found.',
 }
