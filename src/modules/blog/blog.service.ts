@@ -45,7 +45,7 @@ export class BlogService {
    ): Promise<{ statusCode: number; message: string; data: BlogDocument }> {
      const blog = await this.blogModel.findById(id).exec();
      if (!blog) {
-       throw new NotFoundException(`${Messages.CATEGORY_NOT_FOUND} id: ${id}`);
+       throw new NotFoundException(`${Messages.BLOG_NOT_FOUND} id: ${id}`);
      }
      return formatResponse(HttpStatus.OK, Messages.BLOG_RETRIEVED, blog);
    }
