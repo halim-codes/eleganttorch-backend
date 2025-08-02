@@ -8,6 +8,7 @@ import { UsersModule } from './modules/users/users.module';
 import { AuthModule } from './modules/auth/auth.module';
 import { CategoriesModule } from './modules/categories/categories.module';
 import { BlogModule } from './modules/blog/blog.module';
+import { AboutUsModule } from './modules/about-us/about-us.module';
 
 @Module({
   imports: [
@@ -23,6 +24,7 @@ import { BlogModule } from './modules/blog/blog.module';
     UsersModule,
     CategoriesModule,
     BlogModule,
+    AboutUsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
