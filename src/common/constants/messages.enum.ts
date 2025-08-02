@@ -14,4 +14,13 @@ export enum Messages {
   CATEGORY_UPDATED = 'Category updated successfully.',
   CATEGORY_DELETED = 'Category deleted successfully.',
   CATEGORY_NOT_FOUND = 'Category not found.',
+
+  // Blog Messages
+  BLOG_CREATED = 'Blog post published successfully.',
+  BLOG_RETRIEVED = 'Blog post loaded successfully.',
+  BLOGS_RETRIEVED = 'All blog posts retrieved successfully.',
+  BLOG_UPDATED = 'Blog post updated successfully.',
+  BLOG_DELETED = 'Blog post deleted successfully.',
+  BLOG_NOT_FOUND = 'Blog post not found.',
+
 }
