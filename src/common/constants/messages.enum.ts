@@ -29,4 +29,20 @@ export enum Messages {
   ABOUT_US_UPDATED = 'About Us content updated successfully.',
   ABOUT_US_DELETED = 'About Us content deleted successfully.',
   ABOUT_US_NOT_FOUND = 'About Us content not found.',
+
+  // Communication Request Messages
+  COMM_REQUEST_CREATED = 'Communication request submitted successfully.',
+  COMM_REQUEST_RETRIEVED = 'Communication request loaded successfully.',
+  COMM_REQUESTS_RETRIEVED = 'All communication requests retrieved successfully.',
+  COMM_REQUEST_UPDATED = 'Communication request updated successfully.',
+  COMM_REQUEST_DELETED = 'Communication request deleted successfully.',
+  COMM_REQUEST_NOT_FOUND = 'Communication request not found.',
+
+  // CoInformation Messages
+  CO_INFORMATION_CREATED = 'CoInformation created successfully.',
+  CO_INFORMATION_RETRIEVED = 'CoInformation(s) retrieved successfully.',
+  CO_INFORMATION_UPDATED = 'CoInformation updated successfully.',
+  CO_INFORMATION_DELETED = 'CoInformation deleted successfully.',
+  CO_INFORMATION_NOT_FOUND = 'CoInformation not found.',
+
 }

@@ -9,6 +9,9 @@ import { AuthModule } from './modules/auth/auth.module';
 import { CategoriesModule } from './modules/categories/categories.module';
 import { BlogModule } from './modules/blog/blog.module';
 import { AboutUsModule } from './modules/about-us/about-us.module';
+import { CoInformationsModule } from './modules/co_informations/co_informations.module';
+import { CommunicationRequestsModule } from './modules/communication_requests/communication_requests.module';
+import { ServicesModule } from './modules/services/services.module';
 
 @Module({
   imports: [
@@ -25,6 +28,9 @@ import { AboutUsModule } from './modules/about-us/about-us.module';
     CategoriesModule,
     BlogModule,
     AboutUsModule,
+    CoInformationsModule,
+    CommunicationRequestsModule,
+    ServicesModule,
   ],
   controllers: [AppController],
   providers: [AppService],
