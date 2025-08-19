@@ -12,6 +12,7 @@ import { AboutUsModule } from './modules/about-us/about-us.module';
 import { CoInformationsModule } from './modules/co_informations/co_informations.module';
 import { CommunicationRequestsModule } from './modules/communication_requests/communication_requests.module';
 import { ServicesModule } from './modules/services/services.module';
+import { ProjectsModule } from './modules/projects/projects.module';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { ServicesModule } from './modules/services/services.module';
     CoInformationsModule,
     CommunicationRequestsModule,
     ServicesModule,
+    ProjectsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

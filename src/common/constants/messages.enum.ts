@@ -45,4 +45,19 @@ export enum Messages {
   CO_INFORMATION_DELETED = 'CoInformation deleted successfully.',
   CO_INFORMATION_NOT_FOUND = 'CoInformation not found.',
 
+  // Service Messages
+  SERVICE_CREATED = 'Service created successfully',
+  SERVICE_RETRIEVED = 'Services retrieved successfully',
+  SERVICE_UPDATED = 'Service updated successfully',
+  SERVICE_DELETED = 'Service deleted successfully',
+  SERVICE_NOT_FOUND = 'Service not found',
+
+  // Project Messages
+  PROJECT_CREATED = 'Project created successfully.',
+  PROJECT_RETRIEVED = 'Project retrieved successfully.',
+  PROJECTS_RETRIEVED = 'Projects retrieved successfully.',
+  PROJECT_UPDATED = 'Project updated successfully.',
+  PROJECT_DELETED = 'Project deleted successfully.',
+  PROJECT_NOT_FOUND = 'Project not found.',
+
 }
