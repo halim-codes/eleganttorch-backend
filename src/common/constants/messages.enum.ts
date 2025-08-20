@@ -60,4 +60,12 @@ export enum Messages {
   PROJECT_DELETED = 'Project deleted successfully.',
   PROJECT_NOT_FOUND = 'Project not found.',
 
+  // Product Messages
+  PRODUCT_CREATED = 'Product created successfully.',
+  PRODUCT_RETRIEVED = 'Product retrieved successfully.',
+  PRODUCTS_RETRIEVED = 'Products retrieved successfully.',
+  PRODUCT_UPDATED = 'Product updated successfully.',
+  PRODUCT_DELETED = 'Product deleted successfully.',
+  PRODUCT_NOT_FOUND = 'Product not found.',
+
 }

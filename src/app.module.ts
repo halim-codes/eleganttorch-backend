@@ -13,6 +13,7 @@ import { CoInformationsModule } from './modules/co_informations/co_informations.
 import { CommunicationRequestsModule } from './modules/communication_requests/communication_requests.module';
 import { ServicesModule } from './modules/services/services.module';
 import { ProjectsModule } from './modules/projects/projects.module';
+import { ProductsModule } from './modules/products/products.module';
 
 @Module({
   imports: [
@@ -33,6 +34,7 @@ import { ProjectsModule } from './modules/projects/projects.module';
     CommunicationRequestsModule,
     ServicesModule,
     ProjectsModule,
+    ProductsModule,
   ],
   controllers: [AppController],
   providers: [AppService],
