@@ -1,4 +1,9 @@
-import { Injectable, HttpStatus, NotFoundException } from '@nestjs/common';
+import {
+  Injectable,
+  HttpStatus,
+  NotFoundException,
+  BadRequestException,
+} from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { CreateProductDto } from './dto/create-product.dto';
@@ -12,18 +17,24 @@ export class ProductsService {
   constructor(
     @InjectModel(Product.name)
     private productModel: Model<ProductDocument>,
-  ) { }
+  ) {}
 
   async create(
     createProductDto: CreateProductDto,
+    image: Express.Multer.File,
   ): Promise<{ statusCode: number; message: string; data: ProductDocument }> {
-    const created = new this.productModel(createProductDto);
+    if (!image) {
+      throw new BadRequestException('Image is required');
+    }
+    console.log('Uploaded image:', image);
+    const imagePath = `/uploads/${image.filename}`;
+
+    const created = new this.productModel({
+      ...createProductDto,
+      image: imagePath,
+    });
     const saved = await created.save();
-    return formatResponse(
-      HttpStatus.CREATED,
-      Messages.PRODUCT_CREATED,
-      saved
-    );
+    return formatResponse(HttpStatus.CREATED, Messages.PRODUCT_CREATED, saved);
   }
 
   async findAll(): Promise<{
@@ -31,12 +42,8 @@ export class ProductsService {
     message: string;
     data: ProductDocument[];
   }> {
-    const products = await this.productModel.find().exec();
-    return formatResponse(
-      HttpStatus.OK,
-      Messages.PRODUCTS_RETRIEVED,
-      products,
-    );
+    const products = await this.productModel.find().populate('category').exec();
+    return formatResponse(HttpStatus.OK, Messages.PRODUCTS_RETRIEVED, products);
   }
 
   async findOne(
@@ -59,17 +66,11 @@ export class ProductsService {
     if (!updated) {
       throw new NotFoundException(`${Messages.PRODUCT_NOT_FOUND} id: ${id}`);
     }
-    return formatResponse(
-      HttpStatus.OK,
-      Messages.PRODUCT_UPDATED,
-      updated,
-    );
+    return formatResponse(HttpStatus.OK, Messages.PRODUCT_UPDATED, updated);
   }
 
   async remove(id: string): Promise<{ statusCode: number; message: string }> {
-    const deleted = await this.productModel
-      .findByIdAndDelete(id)
-      .exec();
+    const deleted = await this.productModel.findByIdAndDelete(id).exec();
     if (!deleted) {
       throw new NotFoundException(`${Messages.PRODUCT_NOT_FOUND} id: ${id}`);
     }
